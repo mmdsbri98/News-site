@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Document</title>
+</head>
+<body class="alert-dark">
+  <%- include('./navbar') %>
+    <div class="m-4">
+        <img class="offset-5" src=<%=user.image%> style="border-radius: 50%; height: 200px; width: 200px;"/>
+    </div>
+    <div  class=" col-12 mt-5">
+        <table class="table table-dark">
+            <thead>
+              <tr>
+                <th scope="col">name</th>
+                <th scope="col">family</th>
+                <th scope="col">username</th>
+                <th scope="col">sex</th>
+                <th scope="col">phone</th>
+                <th scope="col">email</th>
+                <th scope="col">activation</th>
+              </tr>
+            </thead>
+            <tbody>
+             
+              <tr>
+                <td scope="row"><%= user.firstName%></td>
+                <td><%= user.lastName%></td>
+                <td><%= user.userName%></td>
+                <td><%= user.sex%></td>
+                <td><%= user.phoneNumber%></td>
+                <td><%= user.email%></td>
+                <td><%= user.active%></td>
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+     <% if(user.active===false){%>
+        <div style="direction: ltr;" class="offset-4 col-4 alert alert-danger" role="alert">
+          ادمین فعالیت شما در سایت را تایید نکرده است منتظر تایید ادمین باشید
+          </div>
+        <% }else{ %> 
+          <div style="font-family: cursive;">
+            <div style="width: 100%; height: 200px; display: flex;background-color: beige; ">
+          
+              <a href='/article/createArticle/<%=user._id%>' style="border: black 1px solid;height: 100%; width: 50%;display: flex; align-items: center; justify-content: center;border-radius: none; " class="btn">create article</a>
+                 
+              <a href='/share/editProfile/<%=user._id%>' style="border: black 1px solid;height: 100%; width: 50%;display: flex; align-items: center; justify-content: center;" class="btn">edit profile</a>
+            </div>
+            <div style="width: 100%; height: 200px; display: flex;background-color: beige; ">
+              <a href='/share/changePassword/<%=user._id%>' style="border: black 1px solid;height: 100%; width: 34%;display: flex; align-items: center; justify-content: center;  " class="btn">change password</a>
+              <a href='/share/uploadimage/<%=user.userName%>' style="border: black 1px solid;height: 100%; width: 33%;display: flex; align-items: center; justify-content: center;  " class="btn">change photo</a>
+              <a href='/share/myArticles/<%=user._id%>' style="border: black 1px solid;height: 100%; width: 33%;display: flex; align-items: center; justify-content: center;  " class="btn">my articles</a>
+            </div>
+          </div>
+        
+
+             <%}%> 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

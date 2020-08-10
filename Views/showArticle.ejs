@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="table-dark">
+  <%- include('./navbar') %>
+    <center>
+        
+        <div class="card m-4 alert-secondary" style="font-family: cursive; width: 30rem; display:flex;">
+            <img src="<%=pass[0]['image']%>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title"><%=pass[0]['name']%></h3>
+              <h2 class="card-title"><%=pass[0]['Title']%></h2>
+              <p class="card-text"><%=pass[0]['Description']%></p>
+              <p class="card-text"> <%-pass[0]['Text']%></p>
+              <h6 class="card-title" style="float: left; font-size: small;"><span >date og creation:</span> <%= pass[0]['createAt'].toString().substring(3,16)%> </h6><br>
+              <hr>
+              <p class="card-text" style="color: cornflowerblue;"> COMMENTS</p>
+              <%if(pass[1]){%>
+              <% for(let i=0 ; i<pass[1].length;i++){%>
+                <p class="card-text"><%=pass[1][i]['Text']%></p>
+                <%}%>
+                <%}else{%>
+                  <div style="font-family: cursive;text-align: center;" class=" mt-4 alert alert-danger offset-4 col-4" role="alert">
+                    NO Comment
+                    </div>
+                    <%}%>
+            </div>
+            <form method="POST" action='/article/addComment/<%=pass[0]['_id']%>'>
+            <div class="card-body">
+              <input name="com" type="text" class="form-control" placeholder="comment" aria-label="Username" aria-describedby="basic-addon1">
+              <button type="submit" class="btn btn-success mt-3">ADD COMMENT</button>
+            </div>
+          </form>
+          </div>
+        </center>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

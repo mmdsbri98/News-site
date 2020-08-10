@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="table-dark pt-4">
+       
+ <div class="offset-4 col-4 pt-4 table-secondary"  >
+    <form method="POST" action="/register/createUser">
+        
+      <span  style="color: black;" id="basic-addon1">firstname:</span><span style="color: red;">*require</span>
+        
+      <input name="firstName" type="text" class="form-control" placeholder="firstname" aria-label="Username" aria-describedby="basic-addon1">
+              <span  style="color: black;" id="basic-addon1">lastname:</span><span style="color: red;">*require</span>
+          
+            <input name="lastName" type="text" class="form-control" placeholder="lastname" aria-label="Username" aria-describedby="basic-addon1">
+          
+          
+              
+          
+          
+            
+              <span  style="color: black;" id="basic-addon1">username:</span><span style="color: red;">*require</span>
+            
+            <input name="userName" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          
+              <span  style="color: black;" id="basic-addon1">password:</span><span style="color: red;">*require</span>
+          
+            <input name="password" type="password" class="form-control" placeholder="password" aria-label="Username" aria-describedby="basic-addon1">
+         
+              <span  style="color: black;" id="basic-addon1">email:</span><span style="color: red;">*require</span>
+            
+            <input name="email" type="email" class="form-control" placeholder="email" aria-label="Username" aria-describedby="basic-addon1">
+         
+              <span  style="color: black;" id="basic-addon1">phonenumber:</span><span style="color: red;">*require</span>
+            
+            <input name="phoneNumber" type="text" class="form-control" placeholder="09_________" aria-label="Username" aria-describedby="basic-addon1">
+          
+              <span  style="color: black;" id="basic-addon1">gender:</span><span style="color: red;">*require</span>
+            
+            <div class="input-group mb-3">
+              <select name="sex" class="custom-select" id="inputGroupSelect01">
+                <option selected>Choose...</option>
+                <option value="female">female</option>
+                <option value="male">male</option>
+                
+              </select>
+            </div>
+          
+            
+        <button class="btn btn-success m-3" type="submit">REGISTER</button>
+    </form>
+  </div> 
+    <% if(err.length!==0){%>
+      <div style="font-family: cursive;text-align: center;" class=" mt-4 alert alert-danger offset-4 col-4" role="alert">
+         <%for(let i=0;i<err.length;i++){ %>
+        <%= err[i] %>
+        <br>
+        <%}%>
+        </div>
+      <% } %> 
+
+ 
+    
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

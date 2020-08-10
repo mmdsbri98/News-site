@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class="table-dark">
+  <%- include('./navbar') %>
+  <% if(article.length===0){%>
+    <div style="font-family: cursive;text-align: center;" class=" mt-4 alert alert-danger offset-4 col-4" role="alert">
+       Article is not
+       </div>
+       <%}%>
+    <% for(let i=0;i<article.length;i++){%>
+        <div class="card m-4 alert-secondary" style="width: 25rem; display:flex;">
+            <img src="<%=article[i]['image']%>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title"><%=article[i]['name']%></h3>
+              <h2 class="card-title"><%=article[i]['Title']%></h2>
+              <p class="card-text"><%=article[i]['Description']%></p>
+              <a href="../../article/showArticle/<%=article[i]._id%>" class="btn btn-primary">Go somewhere</a>
+              <a href="../../article/delete/<%=article[i]._id%>" class="btn btn-warning">DELETE</a>
+              <a href="../../article/edit/<%=article[i]._id%>" class="btn btn-danger">EDIT</a>
+            </div>
+          </div>
+        <%}%>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

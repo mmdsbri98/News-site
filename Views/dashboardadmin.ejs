@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>Document</title>
+</head>
+<body class="alert-dark">
+  <%- include('./navbar') %> 
+  <div class="alert alert-warning m-3">
+
+    <div style="display: flex; justify-content: center; align-items: center">
+        <img  src=<%=user.image%> style="border-radius:50%; height: 200px; width: 200px;"/>
+     
+      </div>
+    <div  class=" col-md-12 col-lg-12 col-sm-12 mt-5">
+        <table class="table table-secondary col-md-6 col-lg-12 col-sm-2" style="font-family: cursive;">
+            <thead>
+              <tr>
+                <th scope="col">name</th>
+                <th scope="col">family</th>
+                <th scope="col">username</th>
+                <th scope="col">sex</th>
+                <th scope="col">phone</th>
+                <th scope="col">email</th>
+                <th scope="col">activation</th>
+              </tr>
+            </thead>
+            <tbody>
+             
+              <tr>
+                <td scope="row"><%= user.firstName%></td>
+                <td><%= user.lastName%></td>
+                <td><%= user.userName%></td>
+                <td><%= user.sex%></td>
+                <td><%= user.phoneNumber%></td>
+                <td><%= user.email%></td>
+                <td><%= user.active%></td>
+              </tr>
+             
+            </tbody>
+          </table>
+    </div>
+  </div>
+  <div style="font-family: cursive;">
+    <div style="width: 100%; height: 200px; display: flex;background-color: beige; ">
+      <a href='/admin/showAdmins' style="border: black 1px solid; height: 100%; width: 25%;display: flex; align-items: center; justify-content: center; " class="btn  ">show admins</a>
+      <a href='/article/createArticle/<%=user._id%>' style="border: black 1px solid;height: 100%; width: 25%;display: flex; align-items: center; justify-content: center;border-radius: none; " class="btn">create article</a>
+      <a href='/article/showArticles' style="border: black 1px solid;display: flex;height: 100%; width: 25%; align-items: center; justify-content: center;  " class="btn ">show article</a>    
+      <a href='/share/editProfile/<%=user._id%>' style="border: black 1px solid;height: 100%; width: 25%;display: flex; align-items: center; justify-content: center;" class="btn">edit profile</a>
+    </div>
+    <div style="width: 100%; height: 200px; display: flex;background-color: beige; ">
+      <a href='/share/changePassword/<%=user._id%>' style="border: black 1px solid;height: 100%; width: 34%;display: flex; align-items: center; justify-content: center;  " class="btn">change password</a>
+      <a href='/share/uploadimage/<%=user.userName%>' style="border: black 1px solid;height: 100%; width: 33%;display: flex; align-items: center; justify-content: center;  " class="btn">change photo</a>
+      <a href='/share/myArticles/<%=user._id%>' style="border: black 1px solid;height: 100%; width: 33%;display: flex; align-items: center; justify-content: center;  " class="btn">my articles</a>
+    </div>
+  </div>
+     
+       
+        
+        
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>
